@@ -1,0 +1,45 @@
+﻿@page
+@model UserLookupWebApp.Pages.Forms.UserDisplayPageModel
+@{
+    ViewData["Title"] = "Display Searched User(s)";
+}
+
+<h1>User Results</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            Full Name
+        </div>
+        <div class="col">
+            First Name
+        </div>
+        <div class="col">
+            Last Name
+        </div>
+        <div class="col">
+            Age Name
+        </div>
+    </div>
+
+@{
+    foreach (var user in Model.DisplayUsers)
+    {
+        <div class="row">
+            <div class="col">
+                @Html.DisplayFor(x => user.FullName)
+            </div>
+            <div class="col">
+                @Html.DisplayFor(x => user.FirstName)
+            </div>
+            <div class="col">
+                @Html.DisplayFor(x => user.LastName)
+            </div>
+            <div class="col">
+                @Html.DisplayFor(x => user.Age)
+            </div>
+        </div>
+    }
+}
+
+</div>
